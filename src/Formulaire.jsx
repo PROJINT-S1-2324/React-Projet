@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 const MessageSender = () => {
-    const [message, setMessage] = useState('');
+    const [messageDto, setMessage] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         // Envoi de la requête POST au serveur Spring Boot
         try {
-            const response = await fetch('http://localhost:8080/api/messages', {
+            const response = await fetch('http://localhost:8080/logMyMessage', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ message }),
+                body: JSON.stringify({ message :messageDto }),  // Assurez-vous que le corps est correctement défini ici
             });
 
             if (response.ok) {
@@ -37,7 +37,7 @@ const MessageSender = () => {
                     Message:
                     <input
                         type="text"
-                        value={message}
+                        value={messageDto}
                         onChange={(e) => setMessage(e.target.value)}
                     />
                 </label>
