@@ -27,7 +27,7 @@ const MessageSender = () => {
             console.error('Erreur réseau:', error);
         }
 
-        // Réinitialisation du champ de texte après l'envoi
+        // Réinitialisation du champ de texte après l'envois
         setMessage('');
     };
 
