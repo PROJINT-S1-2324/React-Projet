@@ -7,8 +7,10 @@ const MessageSender = () => {
         event.preventDefault();
 
         // Envoi de la requête POST au serveur Spring Boot
+
         try {
-            const response = await fetch('http://localhost:8080/logMyMessage', {
+            //const response = await fetch('http://localhost:8080/logMyMessage', {
+            const response = await fetch('/api/logMyMessage', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
